@@ -19,6 +19,9 @@ public class Main {
                     contador++;
                     adicionarTarefa(contador, listaTarefa);
                     break;
+                case 2:
+                    removerTarefa(listaTarefa);
+                    break;
             }
 
         }while(escolha != 5);
@@ -52,5 +55,28 @@ public class Main {
         listaTarefa.add(new Tarefa(contador, titulo));
 
         System.out.println("Tarefa Adicionada com sucesso!");
+    }
+
+    public static void removerTarefa(LinkedList<Tarefa> listaTerefa){
+        Scanner scanner = new Scanner(System.in);
+
+        if(listaTerefa.isEmpty()){
+            System.out.println("A lista está vazia, não é possivel remover!");
+            return;
+        }
+
+        for(int i = 0; i < listaTerefa.size(); i++){
+            System.out.println(listaTerefa.get(i));
+        }
+
+        System.out.print("Digite o id da tarefa que deseja remover: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+
+        id = id - 1;
+
+        System.out.println("Tarefa '" + listaTerefa.get(id).getTitulo() + "' removido com sucesso!");
+
+        listaTerefa.remove(id);
     }
 }
