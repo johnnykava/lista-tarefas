@@ -22,6 +22,9 @@ public class Main {
                 case 2:
                     removerTarefa(listaTarefa);
                     break;
+                case 3:
+                    listarTarefas(listaTarefa);
+                    break;
             }
 
         }while(escolha != 5);
@@ -57,17 +60,15 @@ public class Main {
         System.out.println("Tarefa Adicionada com sucesso!");
     }
 
-    public static void removerTarefa(LinkedList<Tarefa> listaTerefa){
+    public static void removerTarefa(LinkedList<Tarefa> listaTarefa){
         Scanner scanner = new Scanner(System.in);
 
-        if(listaTerefa.isEmpty()){
+        if(listaTarefa.isEmpty()){
             System.out.println("A lista está vazia, não é possivel remover!");
             return;
         }
 
-        for(int i = 0; i < listaTerefa.size(); i++){
-            System.out.println(listaTerefa.get(i));
-        }
+        listarTarefas(listaTarefa);
 
         System.out.print("Digite o id da tarefa que deseja remover: ");
         int id = scanner.nextInt();
@@ -75,8 +76,25 @@ public class Main {
 
         id = id - 1;
 
-        System.out.println("Tarefa '" + listaTerefa.get(id).getTitulo() + "' removido com sucesso!");
+        System.out.println("Tarefa '" + listaTarefa.get(id).getTitulo() + "' removido com sucesso!");
 
-        listaTerefa.remove(id);
+        listaTarefa.remove(id);
+    }
+
+    public static void listarTarefas(LinkedList<Tarefa> listaTarefa){
+        if(listaTarefa.isEmpty()){
+            System.out.println("A lista está vazia, não é possivel listar!");
+            return;
+        }
+
+        for(Tarefa tarefas : listaTarefa){
+            if(!tarefas.isConcluida()){
+                System.out.println("[] " + tarefas.getId() + " " + tarefas.getTitulo());
+            }
+            else {
+                System.out.println("[x] " + tarefas.getId() + " " + tarefas.getTitulo());
+            }
+        }
+
     }
 }
