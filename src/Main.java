@@ -7,6 +7,8 @@ public class Main {
     private static final Path CAMINHO_ARQUIVO = Paths.get("lista-tarefas.txt");
 
     public static void main(String[] args) {
+        LinkedList<Tarefa> listaTarefa = new LinkedList<>();
+
         int escolha, contador = 0;
 
         do{
@@ -15,7 +17,7 @@ public class Main {
             switch (escolha){
                 case 1:
                     contador++;
-                    adicionarTarefa(contador);
+                    adicionarTarefa(contador, listaTarefa);
                     break;
             }
 
@@ -41,13 +43,11 @@ public class Main {
         return escolha;
     }
 
-    public static void adicionarTarefa(int contador){
+    public static void adicionarTarefa(int contador, LinkedList<Tarefa> listaTarefa){
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite o titulo da tarefa: ");
         String titulo = scanner.nextLine();
-
-        LinkedList<Tarefa> listaTarefa = new LinkedList<>();
 
         listaTarefa.add(new Tarefa(contador, titulo));
 
