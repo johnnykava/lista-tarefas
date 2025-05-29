@@ -12,6 +12,13 @@ public class Main {
         do{
             escolha = menu();
 
+            switch (escolha){
+                case 1:
+                    contador++;
+                    adicionarTarefa(contador);
+                    break;
+            }
+
         }while(escolha != 5);
 
 
@@ -43,5 +50,7 @@ public class Main {
         LinkedList<Tarefa> listaTarefa = new LinkedList<>();
 
         listaTarefa.add(new Tarefa(contador, titulo));
+
+        System.out.println("Tarefa Adicionada com sucesso!");
     }
 }
