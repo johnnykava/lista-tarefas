@@ -25,6 +25,15 @@ public class Main {
                 case 3:
                     listarTarefas(listaTarefa);
                     break;
+                case 4:
+                    concluirTarefa(listaTarefa);
+                    break;
+                case 5:
+                    System.out.println("Obrigado por usar o nosso sistema de Tarefas!");
+                    break;
+                default:
+                    System.out.println("Digite uma opção valida do menu!");
+                    break;
             }
 
         }while(escolha != 5);
@@ -96,5 +105,22 @@ public class Main {
             }
         }
 
+    }
+
+    public static void concluirTarefa(LinkedList<Tarefa> listaTarefa){
+        Scanner scanner = new Scanner(System.in);
+
+        if(listaTarefa.isEmpty()){
+            System.out.println("A lista de tarefas está vazia, não tem como concluir!");
+            return;
+        }
+
+        listarTarefas(listaTarefa);
+
+        System.out.print("Digite o número da tarefa que deseja concluir: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+
+        listaTarefa.get(id - 1).setConcluida(true);
     }
 }
