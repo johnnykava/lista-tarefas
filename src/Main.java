@@ -39,7 +39,7 @@ public class Main {
         System.out.println("[1] Adicionar Tarefa");
         System.out.println("[2] Remover Tarefa");
         System.out.println("[3] Listar todas as tarefas");
-        System.out.println("[4] Buscar Tarefa");
+        System.out.println("[4] Concluir Tarefa");
         System.out.println("[5] Sair");
         System.out.print("Digite um número: ");
         int escolha = scanner.nextInt();
