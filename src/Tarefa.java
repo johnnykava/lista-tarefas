@@ -1,17 +1,16 @@
 public class Tarefa {
     private int id;
     private String titulo;
-    private boolean concluida;
+    private boolean concluida = false;
 
     //Construtor NO ARGS
     public Tarefa() {
     }
 
     //Construtor ALL ARGS
-    public Tarefa(int id, String titulo, boolean concluida) {
+    public Tarefa(int id, String titulo) {
         this.id = id;
         this.titulo = titulo;
-        this.concluida = concluida;
     }
 
     //Getters e Setters
