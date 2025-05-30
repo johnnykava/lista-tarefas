@@ -1,3 +1,5 @@
+package model;
+
 public class Tarefa {
     private int id;
     private String titulo;
@@ -41,7 +43,7 @@ public class Tarefa {
     //Metodo toString
     @Override
     public String toString() {
-        return "Tarefa{" +
+        return "model.Tarefa{" +
                 "id=" + id +
                 ", titulo='" + titulo + '\'' +
                 ", concluida=" + concluida +
