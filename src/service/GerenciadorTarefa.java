@@ -12,7 +12,7 @@ public class GerenciadorTarefa {
 
         listaTarefa.add(new Tarefa(contador, titulo));
 
-        System.out.println("model.Tarefa Adicionada com sucesso!");
+        System.out.println("Tarefa Adicionada com sucesso!");
     }
 
     public void removerTarefa(LinkedList<Tarefa> listaTarefa, Scanner scanner){
@@ -34,7 +34,7 @@ public class GerenciadorTarefa {
 
         id = id - 1;
 
-        System.out.println("model.Tarefa '" + listaTarefa.get(id).getTitulo() + "' removido com sucesso!");
+        System.out.println("Tarefa '" + listaTarefa.get(id).getTitulo() + "' removido com sucesso!");
 
         listaTarefa.remove(id);
     }

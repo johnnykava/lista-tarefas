@@ -50,10 +50,10 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("---------- MENU ----------");
-        System.out.println("[1] Adicionar model.Tarefa");
-        System.out.println("[2] Remover model.Tarefa");
+        System.out.println("[1] Adicionar Tarefa");
+        System.out.println("[2] Remover Tarefa");
         System.out.println("[3] Listar todas as tarefas");
-        System.out.println("[4] Concluir model.Tarefa");
+        System.out.println("[4] Concluir Tarefa");
         System.out.println("[5] Sair");
         System.out.print("Digite um número: ");
         int escolha = scanner.nextInt();
