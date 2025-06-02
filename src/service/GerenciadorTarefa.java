@@ -40,20 +40,29 @@ public class GerenciadorTarefa {
     }
 
     public void listarTarefas(LinkedList<Tarefa> listaTarefa){
+        LinkedList<Tarefa> listaConcluidas = new LinkedList<>();
+
         if(listaTarefa.isEmpty()){
             System.out.println("A lista está vazia, não é possivel listar!");
             return;
         }
 
+        System.out.println("--------------- A FAZER ---------------");
         for(Tarefa tarefas : listaTarefa){
             if(!tarefas.isConcluida()){
                 System.out.println("[] " + tarefas.getId() + " " + tarefas.getTitulo());
             }
             else {
-                System.out.println("[x] " + tarefas.getId() + " " + tarefas.getTitulo());
+                listaConcluidas.add(tarefas);
             }
         }
 
+        if(!listaConcluidas.isEmpty()){
+            System.out.println("--------------- CONCLUIDAS ---------------");
+            for(Tarefa tarefas : listaConcluidas){
+                System.out.println("[x] " + tarefas.getId() + " " + tarefas.getTitulo());
+            }
+        }
     }
 
     public void concluirTarefa(LinkedList<Tarefa> listaTarefa, Scanner scanner){
